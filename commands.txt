@@ -1,0 +1,49 @@
+#craeting virtual environment : 
+    python -m venv bot
+#Activating virtual environment :
+    bot\Scripts\Activate   
+
+#for starting new prpject in django   
+    python -m django startproject short
+
+#for craeting new app in django 
+    python manage.py startapp shortner 
+
+# when we get operational error we have to do following things
+     delete all .py file in migrations
+     and .sqlite3  file  and use following commands 
+        python manage.py makemigrations
+        python ./manage.py migrate
+
+
+..........................................................................................................................................
+>>> from shortner.models import Short
+>>> obj = Short.objects.create(url = 'https://realpython.com/lessons/duck-typing/',shortcode = 'duckTyping')
+>>> obj
+<Short: https://realpython.com/lessons/duck-typing/>
+>>> obj.shortcode
+'duckTyping'
+>>> obj1,created  = Short.object.get_or_craete(url = "https://manjusha-0103.github.io/WebCalculator/",shortcode = 'webcalculator') 
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'Short' has no attribute 'object'
+>>> obj1,created  = Short.objects.get_or_craete(url = "https://manjusha-0103.github.io/WebCalculator/",shortcode = 'webcalculator') 
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'get_or_craete'
+>>> obj1,created  = Short.objects.get_or_create(url = "https://manjusha-0103.github.io/WebCalculator/",shortcode = 'webcalculator')  
+>>> created
+True
+>>> obj1
+<Short: https://manjusha-0103.github.io/WebCalculator/>
+>>> obj1= Short.objects.get_or_create(url = "https://manjusha-0103.github.io/WebCalculator/",shortcode = 'webcalculator')           
+>>> obj1
+(<Short: https://manjusha-0103.github.io/WebCalculator/>, False)
+>>> obj2= Short.objects.get_or_create(url = "https://manjusha-0103.github.io/WebCalculator/",shortcode = 'webcalculator') 
+>>> obj2
+(<Short: https://manjusha-0103.github.io/WebCalculator/>, False)
+>>> obj2= Short.objects.get_or_create(url = "https://manjusha-0103.github.io/WebCalculator/",shortcode = 'web')           
+>>> obj2
+(<Short: https://manjusha-0103.github.io/WebCalculator/>, True)
+
+........................................................................................................................................
