@@ -7,14 +7,19 @@ class ShortURLManager(models.Manager):
         qs = qs_.filter(active = True )
         return qs
 
-    def refresh_shortcode(self):    
+    def refresh_shortcode(self, items= None): 
+        print(items)  
+        #print(id) 
         qs = Short.objects.filter(id__gte = 1)
+        if items is not None and isinstance(items, int):
+            qs = qs.order_by('-id')[:items]
+
         new_codes = 0
         for q in qs:
             q.shortcode = create_shortcode(q)
-            print( q.shortcode)
+            print( q.id)
             q.save()
-            new_codes +=1
+            new_codes += 1
         return "new codes made {i}".format(i = new_codes)         
 
 class Short(models.Model):
@@ -26,7 +31,7 @@ class Short(models.Model):
 
     objects = ShortURLManager()
     def save(self, *args,**kwargs):
-        print('something')
+        #print('something')
         if self.shortcode is None or self.shortcode == "":
             self.shortcode = create_shortcode(self)
         super(Short,self).save( *args,**kwargs)
@@ -37,3 +42,5 @@ class Short(models.Model):
     def __unicode__(self):
         return str(self.url)    
     
+    '''class Meta:
+        ordering = '-id' '''
