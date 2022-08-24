@@ -1,0 +1,21 @@
+ALL META CHARACTERS : . ^ * $ + ? {} [] \ | ()
+
+. Any character (except new line)
+^ starts with "^hello"
+$ ENDS with "words"
+* Zero or more ocurreces "aix*"
++ one or more ocurences "aix*"
+{} exactly specified occurences "al{2}"
+[] A set of characters "[a-m]"
+\ Special sequences (or escape special characters) "\d"
+| Either or "falls| satys"
+() Capture and group
+
+\d : Matches any decimal digit ;[0,9]
+\D : MAtches any non-digit characters; (space " " tab "\t" newline "\n")
+\s : Matches any whitespace character ;
+\S : Matches any non-whitespace character ;
+\w : Matches any aphanumeric character ;[a-zA-Z0-9_].
+\W : Matches any non-aphanumeric character ;
+\b : Matches where the specified characters are at the begining or at the end of the words
+\B : Matches where the specified charactersare present, but NOT at the begining (or )

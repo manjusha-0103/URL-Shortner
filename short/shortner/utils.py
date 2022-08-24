@@ -1,10 +1,16 @@
 import random 
 import string
 
-def generate_code(size = 6 ,char= string.ascii_lowercase+string.digits):
-    return ''.join(random.choice(char)for _  in range(size))
+from django.conf import Settings
 
-def create_shortcode(instance,size = 6):
+from short import settings
+
+SHORTCODE_MIN = getattr(settings, "SHORTCODE_MIN", 6)
+
+def generate_code(size = SHORTCODE_MIN,char= string.ascii_lowercase+string.digits):
+    return ''.join(random.choice(char) for _  in range(size))
+
+def create_shortcode(instance,size = SHORTCODE_MIN ):
     newcode = generate_code(size = size)
     '''print(instance)
     print(instance.__class__)

@@ -123,3 +123,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)
+
+SHORTCODE_MAX = 15
+SHORTCODE_MIN = 6
