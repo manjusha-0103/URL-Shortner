@@ -6,6 +6,7 @@
 #for starting new prpject in django   
     python -m django startproject short
 
+
 #for craeting new app in django 
     python manage.py startapp shortner 
 

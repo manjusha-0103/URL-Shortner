@@ -8,7 +8,7 @@ class Command(BaseCommand):
         parser.add_argument('--items', nargs='+', type=int)
 
     def handle(self, *args, **options):
-        #print(options)
+        print(options)
         return Short.objects.refresh_shortcode( items = options['items'])
 
         '''for poll_id in options['poll_ids']:
