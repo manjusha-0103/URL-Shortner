@@ -1,3 +1,6 @@
+username = mgk
+pass = mgk@0103
+
 #craeting virtual environment : 
     python -m venv bot
 #Activating virtual environment :
@@ -15,6 +18,8 @@
      and .sqlite3  file  and use following commands 
         python manage.py makemigrations
         python ./manage.py migrate
+
+
 
 
 ..........................................................................................................................................

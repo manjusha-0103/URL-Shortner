@@ -1,13 +1,15 @@
+from wsgiref.validate import validator
 from django.db import models
 from shortner.utils import generate_code,create_shortcode
 from short import settings
+from .validate import validate_url,validate_dot_com
 
 SHORTCODE_MAX = getattr(settings, "SHORTCODE_MAX", 15)
 
 class ShortURLManager(models.Manager):
     def all(self,*args,**kwargs):
         qs_ = super(ShortURLManager,self).all(*args,**kwargs)
-        qs = qs_.filter(active = False )
+        qs = qs_.filter(active = True )
         return qs
 
     def refresh_shortcode(self, items= None): 
@@ -28,8 +30,8 @@ class ShortURLManager(models.Manager):
 
 class Short(models.Model):
     #id_auto = models.AutoField(primary_key=True)
-    url = models.CharField(max_length=220,)
-    shortcode = models.CharField(max_length=SHORTCODE_MAX,unique=True,default="mgk@",blank = True)
+    url = models.CharField(max_length=220,validators=[validate_url])
+    shortcode = models.CharField(max_length=SHORTCODE_MAX,unique=True,default="",blank = True)
     update = models.DateField(auto_now=True)
     timestamp = models.DateField(auto_now_add= True)
     active = models.BooleanField(default=True)
