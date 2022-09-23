@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,re_path
 #from django.conf.urls import url 
-from shortner.views import short_view ,Home_view ,ShortCBview
+from shortner.views import short_view ,Home_view ,URLRedirectview
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$',Home_view.as_view()),
     #re_path(r'^(?P<shortcode>[\w-]+)$',short_view),
-    re_path(r'^(?P<shortcode>[\w-]+)/$',ShortCBview.as_view()),
+    re_path(r'^(?P<shortcode>[\w-]+)/$',URLRedirectview.as_view(),name = "shortcode"),
 ]

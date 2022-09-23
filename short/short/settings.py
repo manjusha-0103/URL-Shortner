@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Analytics',
     'django_hosts',
     'shortner',
+
     
 ]
 
@@ -59,6 +61,8 @@ ROOT_URLCONF = 'short.urls'
 ROOT_HOSTCONF = 'short.hosts'
 DEFAULT_HOST = 'www'
 DEFAULT_ULR_REDIRECT = "http://www.shortener.com:8000"
+PARENT_HOST = "shortener.com:8000"
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

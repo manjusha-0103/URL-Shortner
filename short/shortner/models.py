@@ -2,6 +2,7 @@ from wsgiref.validate import validator
 from django.db import models
 from shortner.utils import generate_code,create_shortcode
 from short import settings
+from django_hosts.resolvers import reverse
 from .validate import validate_url,validate_dot_com
 
 SHORTCODE_MAX = getattr(settings, "SHORTCODE_MAX", 15)
@@ -47,7 +48,12 @@ class Short(models.Model):
         return str(self.url)
 
     def __unicode__(self):
-        return str(self.url)    
-    
+        return str(self.url)   
+
+    def get_short_url(self):
+        print(self.shortcode)
+        url_path= reverse("shortcode", kwargs={'shortcode' : self.shortcode},host = "www",scheme = 'http')
+        #print(url_path)
+        return url_path
     '''class Meta:
         ordering = '-id' '''
