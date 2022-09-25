@@ -1,4 +1,5 @@
 from ast import FormattedValue
+from email.mime import image
 from re import template
 from django.shortcuts import render , get_object_or_404
 from django.http import HttpResponse,HttpResponseRedirect,Http404
@@ -15,7 +16,8 @@ class Home_view(View):
     def get(self,request,*args,**kwargs):
         the_form = SubmitUrlForm()
         context = {
-            "title" :"submit url",
+            "title" :"Teeny-Weeny URL </> ",
+            
             "form" : the_form,
         }
         return render(request,"short\home.html",context)
@@ -27,7 +29,7 @@ class Home_view(View):
          
         #print(form)
         context = {
-            "title" :"submit url",
+            "title" :"URL",
             "form" : form,
         } 
         template = "short\home.html"

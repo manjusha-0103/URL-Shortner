@@ -1,18 +1,250 @@
-<!DOCTYPE html>
-<html>
-    <head>
+{% extends "base/base.html" %}
 
-    </head>
-    <body>
-        <div style = "width : 800px; margin:0 auto">
-            <h1>{{title}}</h1>
+{% block content %}
+<style>
+    label{
+        color: black;
+        font-size: large;
+    }
+             
+            a{
+                color: #4f213a;
+            }
+            h1{
+                color: black;
+            }
+            .card_home{
+                width : 50%; margin:0 auto;
+                height : 35%;
+                background-color: rgb(143, 119, 31);
+                margin-top : 40px;
+                padding-right: 20px;
+                padding-left: 20px;
+                padding-top: 10px;
+                padding-bottom: 20px;
+                border-radius: 10px;
+            }
+            .card1_home{
+                width : 50%; margin:0 auto;
+                height : 70%;
+                margin : 10px 10px 10px 10px; 
+                padding :auto; 
+            }
+            input[type = "text"]{
+                background-color: rgb(238, 236, 220);
+                width : 70%;
+            }
+            input[type = "text"]:hover{
+                background-color: rgb(215, 215, 210);
+            }
+            
+            p{
+                color: black;
+            }
+            
+            
+/*<button class="button-5" role="button">Button 5</button>*/
 
+/* CSS */
+            .button-5 {
+                align-items: center;
+                background-clip: padding-box;
+                background-color: rgb(231, 222, 211);
+                border: 1px solid transparent;
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+                box-sizing: border-box;
+                color: #fff;
+                cursor: pointer;
+                display: inline-flex;
+                font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 16px;
+                font-weight: 600;
+                justify-content: center;
+                line-height: 1.25;
+                margin: 0;
+                min-height: 3rem;
+                padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+                position: relative;
+                text-decoration: none;
+                transition: all 250ms;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+                vertical-align: baseline;
+                width: auto;
+            }
+
+            .button-5:hover,.button-5:focus {
+                background-color: rgb(176, 133, 77);
+                box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+            }
+
+            .button-5:hover {
+                transform: translateY(-1px);
+            }
+
+            .button-5:active {
+                background-color: rgb(204, 129, 30);
+                box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+                transform: translateY(0);
+            }
+             
+            input[type = "submit"]{
+            
+                align-items: center;
+                background-clip: padding-box;
+                background-color: rgb(204, 129, 30);
+                border: 1px solid transparent;
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+                box-sizing: border-box;
+                color: #fff;
+                cursor: pointer;
+                display: inline-flex;
+                font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 16px;
+                font-weight: 600;
+                justify-content: center;
+                line-height: 1.25;
+                margin: 0;
+                min-height: 3rem;
+                padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+                position: relative;
+                text-decoration: none;
+                transition: all 250ms;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+                vertical-align: baseline;
+                width: auto;              
+            }
+
+            input[type = "submit"]:hover{
+                color: #fb8332;
+            } 
+
+            @media screen and (max-width: 360px) {
+                .card_home{
+                    margin-left: 40px;
+                    margin-right: 10px;
+                    width: 80%;
+                    height :32%;
+                }
+                .card1_home{
+                    margin-right: 30px;
+                    width: 70%;
+                }
+                h1{
+                    width : 70%;
+                    font-size: 40px;
+                }
+                p{
+                    width : 70%;
+                    font-size: 12px;
+                }
+                .short_body{
+                    margin-left: -2px;
+                }
+                input[type = "text"]
+                {
+                    width :135%;
+                    height: 23px;
+                }
+                
+            }
+            @media screen and (max-width: 460px) {
+                .card_home{
+                    margin-left: 40px;
+                    margin-right: 10px;
+                    width: 80%;
+                }
+                .card1_home{
+                    margin-right: 30px;
+                    width: 70%;
+                }
+                h1{
+                    width : 70%;
+                }
+                p{
+                    font-size: 7px;
+                }
+                .short_body{
+                    width: 100%;
+                    height : 740px;
+                }
+            }
+            @media screen and (max-width: 280px) {
+                .card_home{
+                    
+                    height : 30%;
+                }
+                .card1_home{
+                    margin-left: 2px;
+                }
+                input[type = "text"]
+                {
+                    width :135%;
+                    height: 23px;
+                }
+                
+                .short_body{
+                    /*width: 100%;*/
+                    padding-left: -2px;
+                    padding-right: 25px;
+                    height : 653px;
+                }
+                h1{
+                    font-size: 22px;
+                }
+                input[type = "submit"]{
+                    margin-right: 20px;
+                }
+            }
+            @media screen and (max-width: 540px) {
+                .card_home{
+                    margin-left: 40px;
+                    margin-right: 10px;
+                    width: 80%;
+                }
+                .card1_home{
+                    margin-right: 30px;
+                    width: 70%;
+                }
+                h1{
+                    width : 70%;
+                }
+                p{
+                    font-size: 14px;
+                }
+                .short_body{
+                    width: 100%;
+                    height : 915px;
+                }
+            }
+            
+</style>
+    
+        <!--https://icon2.cleanpng.com/20180426/srq/kisspng-computer-icons-hyperlink-5ae1736bc71363.2689700915247245878154.jpg
+        https://e7.pngegg.com/pngimages/36/546/png-clipart-hyperlink-computer-icons-direct-link-durable-text-desktop-wallpaper-thumbnail.png
+        https://www.canva.com/design/DAFNNkrr_A4/8v2YfOdpCj9vEHsexhqyNg/view?utm_content=DAFNNkrr_A4&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu
+        -->
+    <div class = "card_home">
+        <div class = "card1_">
+            <h1><b>{{title}}</b>
+                <!--'<img src = "https://www.canva.com/design/DAFNNkrr_A4/8v2YfOdpCj9vEHsexhqyNg/view?utm_content=DAFNNkrr_A4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview"
+                            alt="Home" height="30"width = "40"></b>'-->
+            </h1>
+    
             <form method="POST" , action = ".">
                 {% csrf_token %}
                 {{ form.as_p}}
                 <input type = "submit" value = "SHORT it !!"> 
             </form>
-            
         </div>
-    </body>
-</html>
+    </div>    
+        
+        
+        
+    
+{% endblock content %}

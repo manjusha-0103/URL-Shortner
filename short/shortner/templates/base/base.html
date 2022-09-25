@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{obj.title}}</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <!-- Latest compiled and minified CSS -->
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <style>
+            .short_body{
+                background-image: url("https://i.pinimg.com/originals/c6/14/83/c6148387fe378e13ceeea7cb11f1855f.gif");
+                /*background-repeat:repeat-x;*/
+                background-size: cover; 
+                background-position: center center;
+                background-attachment: fixed;
+
+            }
+             
+            @media screen and (max-width: 360px) {
+                .short_body{
+                    width: 100%;
+                    height : 740px
+                }
+            }
+            @media screen and (max-width: 460px) {
+
+                .short_body{
+                    width: 100%;
+                    height : 740px;
+                }
+            }
+            @media screen and (max-width: 280px) {
+                
+                .short_body{
+                    width: 100%;
+                    height : 915px;
+                }
+            }      
+             
+        </style>
+
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function () {
+                location.href = "/";
+            };
+        </script>
+
+    </head>
+
+    <body class="short_body">
+        
+        {% block content %}
+        
+        {% endblock content%}
+            
+    </body>
+</html>

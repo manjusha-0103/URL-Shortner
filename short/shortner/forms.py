@@ -1,8 +1,17 @@
+from turtle import textinput
+#from typing_extensions import Required
 from django import forms
-from .validate import validate_url,validate_dot_com
+from .validate import validate_url
 
 class SubmitUrlForm(forms.Form):
-    url = forms.CharField(label = "submit url",validators = [validate_url])
+    url = forms.CharField(label = "URL ",validators = [validate_url],
+                        widget=forms.TextInput(
+                            attrs= { 
+                                    "placeholder" : "Enter URL ",
+                                    "class" :"form-control",
+                                }
+                            )
+                        )
 
     ''' 
     def clean(self):

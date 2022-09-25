@@ -1,3 +1,10 @@
+# Background Image:
+  https://www.hallaminternet.com/wp-content/uploads/2018/02/redirects.jpg
+  https://www.socinvestigation.com/wp-content/uploads/2021/03/webpage-redirects.jpg
+  https://i.pinimg.com/originals/c6/14/83/c6148387fe378e13ceeea7cb11f1855f.gif
+  https://miro.medium.com/max/1400/0*boL4IBlKoDdQ59eT
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 username = mgk
 pass = mgk@0103
 
