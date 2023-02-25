@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path,re_path
 #from django.conf.urls import url 
 from shortner.views import short_view ,Home_view ,URLRedirectview
-
+from contact.views import contact_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$',Home_view.as_view()),
+    #path('contact/',),
+    re_path(r'^contact/$',contact_view,name = "contact"),
     #re_path(r'^(?P<shortcode>[\w-]+)$',short_view),
     re_path(r'^(?P<shortcode>[\w-]+)/$',URLRedirectview.as_view(),name = "shortcode"),
 ]

@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'Analytics',
     'django_hosts',
     'shortner',
-
+    'contact',
+    #'fontawesomefree',
     
 ]
 
@@ -128,7 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'shortner/templates/')
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -137,3 +140,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SHORTCODE_MAX = 15
 SHORTCODE_MIN = 6
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'manjushakatkhede96@gmail.com'
+SMTP_HOST_USER = 'manjushakatkhede96@gmail.com'
+EMAIL_HOST_PASSWORD = "xatsrdclrjpweupa"
+SMTP_HOST_PASSWORD = "xatsrdclrjpweupa"
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_PORT = 587
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
