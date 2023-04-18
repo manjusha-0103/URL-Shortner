@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-x#9r#)kb7@$jlk+dvvs5vyrsya)rsxdm9erzg$lj)zg2teu5()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.shortener.com','blog.shortener.com']
+ALLOWED_HOSTS = ['www.shortener.com','blog.shortener.com','https://django-server-production-1476.up.railway.app','teeny-weenyurl.com']
 
 
 # Application definition
