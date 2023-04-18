@@ -47,7 +47,7 @@ def contact_view(request):
         message = request.POST.get('message')
         if name and message and email:
             #subject = email
-            message = f"from : {name}\nmessage : {message}"
+            message = f"Email : {email} \nfrom : {name}\nmessage : {message}"
             try:
                print(send_mail("URL-Shortener.com", message, "url-Shortner.com", [EMAIL_HOST_USER]))
             except BadHeaderError:
